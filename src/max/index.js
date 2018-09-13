@@ -7,7 +7,8 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+  let ignore = n => !isFinite(n) ? 0 : n;
+  return arr.reduce((max, val) => ignore(val) > ignore(max) ? val : max );
 };
 
 export default max;

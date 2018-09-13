@@ -11,7 +11,9 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-  /* your logic here...*/
+  let ignore = n => !isFinite(n) ? 0 : n;
+  return arr.map(parseFloat).reduce ((a, b) => 
+    ignore(a) + (ignore(b)));
 };
 
 export default sumElements;
